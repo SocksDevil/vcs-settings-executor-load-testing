@@ -10,8 +10,9 @@ class SampleBuildType(
     private val projectId: RelativeId,
     private val nameSuffix: Int
 ) : BuildType({
-    name = "Build Conf ${nameSuffix.toString().padStart(3, '0')}"
-    id = AbsoluteId("${projectId}_${name.toId()}")
+    val paddedSuffix = nameSuffix.toString().padStart(3, '0')
+    name = "Build Conf $paddedSuffix"
+    id = AbsoluteId("${projectId}_bc-$paddedSuffix")
 
     steps {
         script {

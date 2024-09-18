@@ -12,8 +12,9 @@ class SampleProject(
 ) : Project() {
     val mainBuildType: BuildType
     init {
-        name = "Project ${nameSuffix.toString().padStart(3, '0')}"
-        val relativeId = RelativeId(name.toId())
+        val paddedSuffix = nameSuffix.toString().padStart(3, '0')
+        name = "Project $paddedSuffix"
+        val relativeId = RelativeId("p-$paddedSuffix")
         id = relativeId
 
         val buildTypes = (1..buildConfCount).map { i -> SampleBuildType(relativeId, i) }
