@@ -14,7 +14,7 @@ class SampleProject(
     init {
         val paddedSuffix = nameSuffix.toString().padStart(3, '0')
         name = "Project $paddedSuffix"
-        val relativeId = RelativeId("p-$paddedSuffix")
+        val relativeId = RelativeId("p_$paddedSuffix")
         id = relativeId
 
         val buildTypes = (1..buildConfCount).map { i -> SampleBuildType(relativeId, i) }
