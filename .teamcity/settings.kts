@@ -31,6 +31,6 @@ version = "2024.07"
 
 project {
     val relativeId = AbsoluteId(name.toId())
-    val innerMainBuildTypes = addSubprojects(100, 100, 120)
+    val innerMainBuildTypes = addSubprojects(10, 100, 120)
     buildType(SampleMainBuildType(relativeId, innerMainBuildTypes))
 }
